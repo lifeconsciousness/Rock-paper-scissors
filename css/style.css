@@ -11,7 +11,6 @@ body {
   grid-template-rows: 0.1fr 1fr;
   grid-template-areas: "left right";
   height: 100vh;
-  background: linear-gradient(30deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
   color: rgb(245, 245, 254);
   font-size: 1.5rem;
 }
@@ -85,7 +84,41 @@ body {
 .score {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 11rem;
 }
 .score * {
   flex: 100%;
+}
+
+.anim-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(30deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
+  background-size: 150% 200%;
+  -webkit-animation: color 24s ease-in-out infinite;
+          animation: color 24s ease-in-out infinite;
+}
+
+@-webkit-keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }/*# sourceMappingURL=style.css.map */
