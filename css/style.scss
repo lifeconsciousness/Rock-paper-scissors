@@ -1,9 +1,12 @@
+html{
+    font-size: 67%;
+}
+
 body{
     margin: 0;
     padding: 0;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 300;
-
 }
 
 .game-container{
@@ -11,7 +14,6 @@ body{
     grid-template-columns: 2.5fr 1fr;
     grid-template-rows: 0.1fr 1fr;
     grid-template-areas:"left right";
-    height: 100vh;
     //background: linear-gradient(30deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     color: rgb(245, 245, 254);
     font-size: 1.5rem;
@@ -115,6 +117,7 @@ body{
     background: linear-gradient(30deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     background-size: 150% 200%;
     animation: color 24s ease-in-out infinite;
+    height: 10%;
 }
 
 @keyframes color{

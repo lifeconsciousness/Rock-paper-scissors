@@ -88,19 +88,19 @@ function updateScore(){
 }
 
 function clickPlay(){
-    var clickSound = new Audio('/sfx/click.wav');
+    var clickSound = new Audio('./sfx/click.wav');
     clickSound.volume = 0.8;
     clickSound.play();
 }
 
 function winPlay(){
-    var clickSound = new Audio('/sfx/win.wav');
+    var clickSound = new Audio('./sfx/win.wav');
     clickSound.volume = 0.25;
     clickSound.play();
 }
 
 function losePlay(){
-    var clickSound = new Audio('/sfx/lose.wav');
+    var clickSound = new Audio('./sfx/lose.wav');
     clickSound.volume = 0.4;
     clickSound.play();
 }
