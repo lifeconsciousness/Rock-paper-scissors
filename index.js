@@ -36,6 +36,25 @@ function computerChoice(choice){
 
     //console.log(compChoice);
 
+    if(compChoice === 1){
+        document.getElementById("rUnderline").innerHTML = "_____________";
+
+        document.getElementById("pUnderline").innerHTML = "";
+        document.getElementById("sUnderline").innerHTML = "";
+    }
+    if(compChoice === 2){
+        document.getElementById("pUnderline").innerHTML = "_____________";
+
+        document.getElementById("sUnderline").innerHTML = "";
+        document.getElementById("rUnderline").innerHTML = "";
+    }
+    if(compChoice === 3){
+        document.getElementById("sUnderline").innerHTML = "_____________";
+
+        document.getElementById("rUnderline").innerHTML = "";
+        document.getElementById("pUnderline").innerHTML = "";
+    }
+
     if(compChoice === 1 && choice === 3 || compChoice === 2 && choice === 1 || compChoice === 3 && choice === 2){
         computerWins++;
     }
@@ -92,6 +111,9 @@ function resetGame(){
     computerWins = 0; 
     updateScore();
     document.getElementById("win-message").innerHTML = "";
+    document.getElementById("rUnderline").innerHTML = ".";
+    document.getElementById("pUnderline").innerHTML = ".";
+    document.getElementById("sUnderline").innerHTML = ".";
 }
 
 document.getElementById("reset-btn").onclick = function(){
