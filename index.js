@@ -1,51 +1,43 @@
-let win = false;
+
 let choice = 0;
 let playerWins = 0;
 let computerWins = 0;
-
-function clickPlay(){
-    var clickSound = new Audio('/sfx/click.wav');
-    clickSound.volume = 0.8;
-    clickSound.play();
-}
 
 //1-rock 2-paper 3-scissors
 
 document.getElementById("rock").onclick = function(){
     clickPlay();
     choice = 1;
-    computerChoice();
+
+    computerChoice(choice);
     updateScore();
     checkWin();
 }
 document.getElementById("paper").onclick = function(){
     clickPlay();
     choice = 2;
-    computerChoice();
+
+    computerChoice(choice);
     updateScore();
     checkWin();
 }
 document.getElementById("scissors").onclick = function(){
-    playerWins++;
     clickPlay();
     choice = 3;
-    computerChoice();
+
+    computerChoice(choice);
     updateScore();
     checkWin();
 }
 
-function updateScore(){
-    document.getElementById("player-score").innerHTML = "You: " + playerWins;
-    document.getElementById("computer-score").innerHTML = "Computer: " + computerWins;
-}
+//main logic of the game
+function computerChoice(choice){
+    let compChoice = Math.round((Math.random() * 2)+1);
 
-function computerChoice(){
-    let compChoice = (Math.random() * 3) + 1;
+    //console.log(compChoice);
+
     if(compChoice === 1 && choice === 3 || compChoice === 2 && choice === 1 || compChoice === 3 && choice === 2){
         computerWins++;
-    }
-    if(compChoice === choice){
-        return;
     }
     else if(compChoice === 3 && choice === 1 || compChoice === 1 && choice === 2 || compChoice === 2 && choice === 3){
         playerWins++;
@@ -54,13 +46,11 @@ function computerChoice(){
 
 function checkWin(){
     if(playerWins === 5){
-        win = true;
         winPlay();
         resetGame();
         document.getElementById("win-message").innerHTML = "Player wins!";
     }
     else if(computerWins === 5){
-        win = false;
         losePlay();
         resetGame();
         document.getElementById("win-message").innerHTML = "Computer won!";
@@ -69,6 +59,19 @@ function checkWin(){
     if(playerWins === 1 || computerWins === 1){
         document.getElementById("win-message").innerHTML = "";
     }
+}
+////////////////////////
+
+
+function updateScore(){
+    document.getElementById("player-score").innerHTML = "You: " + playerWins;
+    document.getElementById("computer-score").innerHTML = "Computer: " + computerWins;
+}
+
+function clickPlay(){
+    var clickSound = new Audio('/sfx/click.wav');
+    clickSound.volume = 0.8;
+    clickSound.play();
 }
 
 function winPlay(){
@@ -79,7 +82,7 @@ function winPlay(){
 
 function losePlay(){
     var clickSound = new Audio('/sfx/lose.wav');
-    clickSound.volume = 0.25;
+    clickSound.volume = 0.4;
     clickSound.play();
 }
 
