@@ -1,1 +1,91 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 300;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-areas: "left right";
+  height: 100vh;
+  background: linear-gradient(30deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
+  color: rgb(245, 245, 254);
+  font-size: 1.5rem;
+}
+
+.left-side {
+  grid-area: left;
+  padding: 0.5rem 2rem;
+}
+
+.right-side {
+  grid-area: right;
+  padding: 6rem 2rem;
+  font-size: 2rem;
+}
+
+.actions-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rps > img {
+  width: 10rem;
+  height: 10rem;
+  margin: 2rem;
+  transition: 0.1s;
+}
+
+.rps > img:hover {
+  cursor: pointer;
+  scale: 120%;
+  transition: 0.17s ease;
+}
+
+.rps > img:active {
+  scale: 113.5%;
+  transition: 0.05s ease;
+}
+
+.rps-computer > img {
+  width: 10rem;
+  height: 10rem;
+  margin: 2rem;
+  transition: 0.1s;
+}
+
+#reset-btn {
+  margin-top: 5rem;
+  width: 14rem;
+  height: 3rem;
+  background-color: rgb(245, 245, 254);
+  border: none;
+  border-radius: 4rem;
+  font-size: 2rem;
+  transition: 0.1s;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.385);
+  color: rgb(31, 31, 31);
+}
+
+#reset-btn:hover {
+  background-color: rgb(50, 50, 206);
+  transition: 0.1s ease;
+  color: rgb(224, 224, 224);
+}
+
+#reset-btn:active {
+  background-color: rgb(22, 22, 22);
+  color: rgb(224, 224, 224);
+}
+
+.score {
+  display: flex;
+  flex-wrap: wrap;
+}
+.score * {
+  flex: 100%;
+}/*# sourceMappingURL=style.css.map */
